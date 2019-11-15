@@ -1,0 +1,18 @@
+<div class="container userProfile">
+    <h2>{{userProfile.firstName}}{{userProfile.name}}</h2>
+    <div>
+        <img [src]='userProfile.photo' [alt]='userProfile.firstName'>
+        <p>Nom: {{userProfile.name}}</p>
+        <p>Prénom: {{userProfile.firstName}}</p>
+        <p *ngIf = "!isShow">{{ userProfile.age }}</p>
+        <h3>{{userProfile.quote}}</h3>
+            <div>
+                <label>quote :
+                    <input [(ngModel)]='userProfile.quote' placeholder="quote"/>
+                </label>
+            </div>
+        <button (click)="showAge()">
+            Age
+        </button>
+    </div>
+</div>
