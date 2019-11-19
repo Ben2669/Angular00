@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Welcome to Benjamin website !';
+
+  isThisIngredientVital:boolean = true;
+
+  displayGuestList:boolean = false;
+
+  songList:string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
+  
+  showMovies:boolean = true;
 }

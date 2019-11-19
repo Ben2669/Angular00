@@ -2,7 +2,33 @@
 <app-sign-up></app-sign-up>
 <app-user-profile></app-user-profile>
 
+<ul>
+    <li>Pommes de terre</li>
+    <li [ngStyle]="{backgroundColor: isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
+    <li>Jambon</li>
+    <li [ngClass]="{'vital': isThisIngredientVital}">Cornichons</li>
+    <li>Chou-fleur</li>
+</ul>
+<hr>
+<ul *appDisplayGuests="displayGuestList">
+    <li>Brenda</li>
+    <li>Dylan</li>
+    <li>Jean-Mi</li>
+    <li>Kylie</li>
+</ul>
+<ul *ngFor="let song of songList">
+    <li>{{ song }}</li>
+</ul>
+<hr>
+<h1 appHighlight>Raclette</h1>
 
+<ul *appShowMovies="showMovies">
+    <li appMovie>Joker</li>
+    <li>Douleur et Gloire</li>
+    <li>Parasites</li>
+    <li>Spider-man : Far From Home</li>
+    <li>Avengers : Endgame</li>
+</ul>
 
 
 <router-outlet></router-outlet>
