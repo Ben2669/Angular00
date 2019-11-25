@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';// <-- NgModel lives here
 
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -10,6 +10,8 @@ import { HighlightDirective } from './highlight.directive';
 import { DisplayGuestsDirective } from './display-guests.directive';
 import { MovieDirective } from './movie.directive';
 import { ShowMoviesDirective } from './show-movies.directive';
+import { MenuComponent } from './menu/menu.component';
+import { ROUTES } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,12 @@ import { ShowMoviesDirective } from './show-movies.directive';
     HighlightDirective,
     DisplayGuestsDirective,
     MovieDirective,
-    ShowMoviesDirective
+    ShowMoviesDirective,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot(ROUTES),
     FormsModule
   ],
   providers: [],
