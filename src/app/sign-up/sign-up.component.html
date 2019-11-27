@@ -1,8 +1,23 @@
 <div class="container signUp">
     <h2>{{signUp.email}}</h2>
-    <div>
-        <label>email :
-            <input [(ngModel)]="signUp.email" placeholder="email"/>
-        </label>
-    </div>
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <div>
+                <label for="username">User</label>
+                <input name="username" type="text" [(ngModel)]="signUp.username" #username="ngModel" required minlength="4" maxlength="25">
+            </div>
+            <div *ngIf="username.errors && myForm.submitted">
+                <span *ngIf="username.errors.required && myForm.submitted">Le champ est requis</span>
+                <span *ngIf="username.errors.minlength && myForm.submitted">Le champ username ne peut être inférieur à 4 caractères</span>
+                <span *ngIf="username.errors.maxlength && myForm.submitted">Le champ username ne doit pas dépasser 25 caractères</span>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input name="email" [(ngModel)]="signUp.email" placeholder="email" type="text" #email="ngModel" required email/>
+            </div>
+            <div *ngIf="email.errors && myForm.submitted">
+                <span *ngIf="email.errors.required && myForm.submitted">Le champ est requis</span>
+                <span *ngIf="email.errors.email && myForm.submitted">Le champ email est invalide</span>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
 </div>

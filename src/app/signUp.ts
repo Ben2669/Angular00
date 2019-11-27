@@ -1,3 +1,4 @@
 export class SignUp {
-    email: string;
-  }
+  email: string;
+  username: string;
+}
